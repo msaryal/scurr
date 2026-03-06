@@ -1,0 +1,17 @@
+.wrapper {
+    max-width:500px;
+    margin:0 auto;
+}
+.form-control,
+.form-select {
+    font-size:18px;
+}
+.form-control:focus,
+.form-select:focus{
+    box-shadow:none;
+    border-color: rgb(18, 117, 69);
+}
+.table-collapse-btn.collapsed {
+    background-color:#fff;
+    color:#000;
+}

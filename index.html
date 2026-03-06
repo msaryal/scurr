@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>scurr</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=2.0,width=device-width">
+    <meta name="apple-mobile-web-app-title" content="scurr" />
+    <link rel="icon" type="image/png" href="ico/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="ico/favicon.svg" />
+    <link rel="shortcut icon" href="ico/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png" />
+    <link rel="manifest" href="ico/site.webmanifest" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="main py-3">
+		<div class="container">
+			<div class="wrapper">
+				<div class="row mb-3">
+					<div class="col-4">
+						<div>
+							<label for="eur-kzt" class="form-label">1 eur - kzt</label>
+							<input type="number" inputmode="decimal" class="form-control" id="eur-kzt" value="580">
+						</div>
+					</div>
+					<div class="col-4">
+						<div>
+							<label for="rub-kzt" class="form-label">1 rub - kzt</label>
+							<input type="number" inputmode="decimal" class="form-control" id="rub-kzt" value="6.2">
+						</div>
+					</div>
+					<div class="col-4">
+						<div>
+							<label for="lir-kzt" class="form-label">1 lir - kzt</label>
+							<input type="number" inputmode="decimal" class="form-control" id="lir-kzt" value="13.3">
+						</div>
+					</div>
+				</div>
+				<div class="row mb-3">
+					<div class="col-6">
+						<button class="btn btn-success w-100 collapsed table-collapse-btn"
+								type="button"
+								data-bs-toggle="collapse"
+								data-bs-target="#table-collapse-lir"
+								aria-expanded="false"
+								aria-controls="table-collapse-lir">
+							Таблица [&#8378;] <i class="bi bi-chevron-down"></i>
+						</button>
+					</div>
+					<div class="col-6">
+						<button class="btn btn-success w-100 collapsed table-collapse-btn"
+								type="button"
+								data-bs-toggle="collapse"
+								data-bs-target="#table-collapse-eur"
+								aria-expanded="false"
+								aria-controls="table-collapse-eur">
+							Таблица [&#8364;] <i class="bi bi-chevron-down"></i>
+						</button>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col">
+						<div class="collapse" id="table-collapse-lir">
+							<table class="table table-sm table-bordered text-center" id="currency-list-table-lir">
+								<tbody></tbody>
+							</table>
+						</div>
+						<div class="collapse" id="table-collapse-eur">
+							<table class="table table-sm table-bordered text-center" id="currency-list-table-eur">
+								<tbody></tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="border border-secondary bg-light rounded p-3">
+					<div class="row">
+						<div class="col-6">
+							<div>
+								<label for="price" class="form-label">Цена</label>
+								<input type="number" inputmode="decimal" class="form-control" id="price" value="20">
+							</div>
+						</div>
+						<div class="col-3">
+							<div>
+								<label for="currency" class="form-label">Валюта</label>
+								<select class="form-select" id="currency" aria-label="Currency select">
+									<option value="eur" selected>&#8364;</option>
+									<option value="lir">&#8378;</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-3">
+							<div>
+								<label for="quantity" class="form-label">Кол-во</label>
+								<input type="number" inputmode="decimal" class="form-control" id="quantity" value="1">
+							</div>
+						</div>
+					</div>
+					<div class="row mt-3">
+						<div class="col">
+							<table class="table table-sm table-bordered text-center mb-0 result-table">
+								<thead>
+									<tr class="table-success">
+										<th>Цена</th>
+										<th>Кол-во</th>
+										<th>Сумма</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td><span id="eur-price-result"></span></td>
+										<td><span id="eur-quantity-result"></span></td>
+										<th><span id="eur-total-result"></span></th>
+									</tr>
+									<tr>
+										<td><span id="lir-price-result"></span></td>
+										<td><span id="lir-quantity-result"></span></td>
+										<th><span id="lir-total-result"></span></th>
+									</tr>
+									<tr>
+										<td><span id="rub-price-result"></span></td>
+										<td><span id="rub-quantity-result"></span></td>
+										<th><span id="rub-total-result"></span></th>
+									</tr>
+									<tr>
+										<td><span id="kzt-price-result"></span></td>
+										<td><span id="kzt-quantity-result"></span></td>
+										<th><span id="kzt-total-result"></span></th>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
