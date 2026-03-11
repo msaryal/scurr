@@ -1,3 +1,7 @@
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sconv/sw.js');
+}
+
 const eurKztInput = document.getElementById('eur-kzt');
 const rubKztInput = document.getElementById('rub-kzt');
 const lirKztInput = document.getElementById('lir-kzt');
